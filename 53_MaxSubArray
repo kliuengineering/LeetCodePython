@@ -1,3 +1,8 @@
+from typing import List
+import random
+import sys
+
+
 class Solution:
 
     ## inefficient method, O(n^2)
@@ -27,3 +32,27 @@ class Solution:
             current_sum += itr
             max_sub_array = max( max_sub_array, current_sum )
         return max_sub_array
+    
+
+def MakeArray(nums: List, SIZE) -> List:
+    for i in range(0, SIZE):
+        nums.append( random.randint(-100, 100) )
+    return nums
+
+
+def main() -> None:
+    argv = sys.argv
+    if len(argv) > 2:
+        raise ValueError("argument needs to be 2")
+    
+    my_array = []
+    my_array = MakeArray( my_array, int(argv[1]) )
+    print(my_array)
+
+    solution = Solution()
+
+    print(solution.maxSubArray(my_array))
+
+
+if __name__ == "__main__":
+    main()
