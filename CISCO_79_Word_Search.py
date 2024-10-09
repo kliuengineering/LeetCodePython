@@ -3,13 +3,17 @@ from typing import List
 
 class Solution:
 
-    def dfs( self, board:List[ List[str] ], row:int, col:int, word:str ) -> bool:
+    def dfs( self, board, row, col, word ):
         # if all letters are found
         if len(word) == 0:                                                                  
             return True
         
         # check valid range
-        if (0 <= row < len(board)) and (0 <= col < len(board[0])) and board[row][col] != "#" and board[row][col] == word[0]:                        
+        if  (0 <= row < len(board))     and \
+            (0 <= col < len(board[0]))  and \
+            board[row][col] != "#"      and \
+            board[row][col] == word[0]:                        
+            
             cache = board[row][col]
             board[row][col] = "#"
 
