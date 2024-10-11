@@ -8,7 +8,7 @@ class Solution:
         KB = {}
 
         for i in range(0, len(nums)):
-            x, y = nums[i], target - nums[i]
+            x, y = nums[i], target - nums[i]        
             if y not in KB:
                 KB[ nums[i] ] = i
             else:

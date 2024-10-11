@@ -6,6 +6,7 @@ class Solution:
         visited = {}
         for i in range( len(nums) ):
             value = target - nums[i]
+
             if value in visited.values():
                 list_key = list( visited.keys() )
                 list_value = list( visited.values() )
@@ -13,4 +14,5 @@ class Solution:
                 return [ index, i ]
             else:
                 visited[i] = nums[i]
+                
         return []
