@@ -24,22 +24,19 @@ class Solution:
 
             # base case
             if l > r:
-                pass
+                return -1
 
             # gets the mid point
             m = (l + r) // 2
 
             if target == nums[m]:
-                rc = m
+                return m
 
             elif target > nums[m]:
-                rc = recursion(m, r)
+                return recursion(m+1, r)
 
             elif target < nums[m]:
-                rc = recursion(l, m-1)
-
-            # returns the search result
-            return rc
+                return recursion(l, m-1)
                 
         return recursion(left, right)
 
